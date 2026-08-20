@@ -1,13 +1,15 @@
 # Topic → official page
 
 Prefix for docs: `https://bun.com/docs/`. Always fetch the `.md` twin.
-Live index if a page is missing: https://bun.com/docs/llms.txt
+Section indexes: `https://bun.com/docs/<section>.md` (not `.../index.md`).
+Welcome: `https://bun.com/docs.md`. Live index if a page is missing:
+https://bun.com/llms.txt
 
 ## Start
 
 | Topic | URL |
 |---|---|
-| Welcome | https://bun.com/docs/index.md |
+| Welcome | https://bun.com/docs.md |
 | Install | https://bun.com/docs/installation.md |
 | Quickstart | https://bun.com/docs/quickstart.md |
 | TypeScript | https://bun.com/docs/typescript.md |
@@ -21,7 +23,8 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 
 | Topic | URL |
 |---|---|
-| Runtime overview | https://bun.com/docs/runtime/index.md |
+| Runtime overview / `bun run` | https://bun.com/docs/runtime.md |
+| `bun run --parallel` / `--sequential` | https://bun.com/docs/runtime.md |
 | Watch / `--hot` | https://bun.com/docs/runtime/watch-mode.md |
 | Debugger | https://bun.com/docs/runtime/debugger.md |
 | REPL | https://bun.com/docs/runtime/repl.md |
@@ -37,14 +40,16 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 | Bun APIs overview | https://bun.com/docs/runtime/bun-apis.md |
 | Web APIs | https://bun.com/docs/runtime/web-apis.md |
 | Node.js compatibility | https://bun.com/docs/runtime/nodejs-compat.md |
-| Utils | https://bun.com/docs/runtime/utils.md |
+| Utils (`stringWidth`, `wrapAnsi`, `stripANSI`, `sliceAnsi`) | https://bun.com/docs/runtime/utils.md |
 
 ## HTTP & networking
 
 | Topic | URL |
 |---|---|
 | `Bun.serve` | https://bun.com/docs/runtime/http/server.md |
+| HTTP/3 (`Bun.serve({ http3 })`) | https://bun.com/docs/runtime/http/server.md |
 | Routing | https://bun.com/docs/runtime/http/routing.md |
+| Static files (`{ dir }`) | https://bun.com/docs/runtime/http/routing.md |
 | Cookies (HTTP) | https://bun.com/docs/runtime/http/cookies.md |
 | Cookies (API) | https://bun.com/docs/runtime/cookies.md |
 | TLS | https://bun.com/docs/runtime/http/tls.md |
@@ -70,6 +75,7 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 | Redis | https://bun.com/docs/runtime/redis.md |
 | Shell (`Bun.$`) | https://bun.com/docs/runtime/shell.md |
 | Spawn | https://bun.com/docs/runtime/child-process.md |
+| Terminal / PTY (`Bun.Terminal`) | https://bun.com/docs/runtime/child-process.md |
 | Workers | https://bun.com/docs/runtime/workers.md |
 | Image (`Bun.Image`) | https://bun.com/docs/runtime/image.md |
 | Hashing / passwords | https://bun.com/docs/runtime/hashing.md |
@@ -84,6 +90,7 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 |---|---|
 | Markdown | https://bun.com/docs/runtime/markdown.md |
 | JSON5 | https://bun.com/docs/runtime/json5.md |
+| JSONC (`Bun.JSONC`, `.jsonc`) | https://bun.com/docs/runtime/file-types.md |
 | JSONL | https://bun.com/docs/runtime/jsonl.md |
 | YAML | https://bun.com/docs/runtime/yaml.md |
 | TOML | https://bun.com/docs/runtime/toml.md |
@@ -103,6 +110,7 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 |---|---|
 | bun install | https://bun.com/docs/pm/cli/install.md |
 | bun add | https://bun.com/docs/pm/cli/add.md |
+| bun add `--catalog` / `--filter` | https://bun.com/docs/pm/cli/add.md |
 | bun remove | https://bun.com/docs/pm/cli/remove.md |
 | bun update | https://bun.com/docs/pm/cli/update.md |
 | bun dedupe | https://bun.com/docs/pm/cli/dedupe.md |
@@ -111,10 +119,12 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 | bun publish | https://bun.com/docs/pm/cli/publish.md |
 | bun outdated | https://bun.com/docs/pm/cli/outdated.md |
 | bun why | https://bun.com/docs/pm/cli/why.md |
-| bun audit | https://bun.com/docs/pm/cli/audit.md |
+| bun audit / `bun audit fix` | https://bun.com/docs/pm/cli/audit.md |
 | bun info | https://bun.com/docs/pm/cli/info.md |
 | bun link | https://bun.com/docs/pm/cli/link.md |
 | bun pm | https://bun.com/docs/pm/cli/pm.md |
+| bun pm diff | https://bun.com/docs/pm/cli/pm.md |
+| bun pm licenses | https://bun.com/docs/pm/cli/pm.md |
 | bun patch | https://bun.com/docs/pm/cli/patch.md |
 | bun --filter | https://bun.com/docs/pm/filter.md |
 | Workspaces | https://bun.com/docs/pm/workspaces.md |
@@ -133,7 +143,8 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 
 | Topic | URL |
 |---|---|
-| Bundler | https://bun.com/docs/bundler/index.md |
+| Bundler | https://bun.com/docs/bundler.md |
+| `--metafile-md` | https://bun.com/docs/bundler.md |
 | Fullstack dev server | https://bun.com/docs/bundler/fullstack.md |
 | Hot reloading | https://bun.com/docs/bundler/hot-reloading.md |
 | HTML & static sites | https://bun.com/docs/bundler/html-static.md |
@@ -151,7 +162,7 @@ Live index if a page is missing: https://bun.com/docs/llms.txt
 
 | Topic | URL |
 |---|---|
-| bun test | https://bun.com/docs/test/index.md |
+| bun test | https://bun.com/docs/test.md |
 | Writing tests | https://bun.com/docs/test/writing-tests.md |
 | Configuration | https://bun.com/docs/test/configuration.md |
 | Runtime behavior | https://bun.com/docs/test/runtime-behavior.md |
@@ -184,6 +195,15 @@ Generated from `packages/bun-types`. Search on https://bun.com/reference
 |---|---|
 | `Bun` | https://bun.com/reference/bun |
 | `Bun.Image` | https://bun.com/reference/bun/Image |
+| `Bun.WebView` | https://bun.com/reference/bun/WebView |
+| `Bun.Terminal` | https://bun.com/reference/bun/Terminal |
+| `Bun.cron` | https://bun.com/reference/bun/cron |
+| `Bun.markdown` | https://bun.com/reference/bun/markdown |
+| `Bun.Archive` | https://bun.com/reference/bun/Archive |
+| `Bun.JSON5` | https://bun.com/reference/bun/JSON5 |
+| `Bun.JSONC` | https://bun.com/reference/bun/JSONC |
+| `Bun.JSONL` | https://bun.com/reference/bun/JSONL |
+| `Bun.XML` | https://bun.com/reference/bun/XML |
 | `bun:sqlite` | https://bun.com/reference/bun/sqlite |
 | `bun:test` | https://bun.com/reference/bun/test |
 | `bun:ffi` | https://bun.com/reference/bun/ffi |
@@ -195,7 +215,7 @@ Node modules: `https://bun.com/reference/node/<module>` (e.g. `fs`, `http`, `tls
 
 ## Guides
 
-Index: https://bun.com/docs/guides/index.md
+Index: https://bun.com/guides.md
 
 ### Deploy
 
@@ -434,5 +454,17 @@ Index: https://bun.com/docs/guides/index.md
 
 ## Changelog
 
-`https://bun.com/blog/bun-v<version>` — latest `1.3.14`: https://bun.com/blog/bun-v1.3.14
-Blog index: https://bun.com/blog
+`https://bun.com/blog/bun-v<version>` — latest `1.4.0` (2026-08-20):
+https://bun.com/blog/bun-v1.4.0
+
+| Topic | URL |
+|---|---|
+| Upgrading / breaking changes | https://bun.com/blog/bun-v1.4.0#upgrading-to-1-4 |
+| `--cpu-prof` / `--heap-prof` | https://bun.com/blog/bun-v1.4.0#dev-tooling |
+| `process.on("memoryPressure")` | https://bun.com/blog/bun-v1.4.0#process-on-memorypressure |
+| HTTP/2 and HTTP/3 `fetch` (experimental) | https://bun.com/blog/bun-v1.4.0#http-2-http-3-in-fetch-experimental |
+| React Compiler | https://bun.com/blog/bun-v1.4.0#built-in-react-compiler |
+| Per-PR notes | https://bun.com/blog/release-notes/bun-v1.4.0 |
+| Rust rewrite | https://bun.com/blog/bun-in-rust |
+| Node.js test suite tracker | https://bun.com/node-test-suite |
+| Blog index | https://bun.com/blog |

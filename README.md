@@ -2,7 +2,7 @@
 
 Agent skill that routes Bun questions to official documentation instead of a frozen API snapshot.
 
-Bun ships markdown twins for every docs page (`https://bun.com/docs/<path>.md`), a live index (`/docs/llms.txt`), and a type reference generated from `packages/bun-types`. This skill is a thin map plus a fetch protocol.
+Bun ships markdown twins for every docs page (`https://bun.com/docs/<path>.md`), a live index (`https://bun.com/llms.txt`), and a type reference generated from `packages/bun-types`. This skill is a thin map plus a fetch protocol.
 
 ## Install
 
@@ -20,10 +20,12 @@ Works with Grok, Claude Code, Codex, Cursor, and any agent that loads `SKILL.md`
 
 ## What it does
 
-1. Pick the topic from [`references/topics.md`](references/topics.md) (~330 official URLs).
-2. Fetch the markdown page, not the HTML.
+1. Pick the topic from [`references/topics.md`](references/topics.md) (~350 official URLs).
+2. Fetch the markdown page, not the HTML. Section indexes are
+   `https://bun.com/docs/<section>.md`, not `.../index.md`.
 3. Use [`bun.com/reference`](https://bun.com/reference) or local `@types/bun` for signatures.
 4. Use [`bun.com/blog/bun-vX.Y.Z`](https://bun.com/blog) for changelogs.
+   Current: [Bun 1.4](https://bun.com/blog/bun-v1.4.0).
 
 Source catalog: [`references/sources.md`](references/sources.md).
 
@@ -42,12 +44,12 @@ bun-docs/
 - Do not answer Bun API/CLI questions from memory.
 - Official docs win over community snapshots.
 - In a Bun project use `bun`, not `node` / `npm` / `npx`.
-- Prefer Bun-native APIs (`Bun.serve`, `Bun.Image`, `bun:sqlite`, …) unless the official page says they cannot do the job.
-- Mark experimental APIs as experimental (HTTP/2 and HTTP/3 `fetch` clients, `Bun.serve({ http3 })`, `install.globalStore`).
+- Prefer Bun-native APIs (`Bun.serve`, `Bun.Image`, `Bun.WebView`, `Bun.markdown`, `Bun.cron`, `Bun.Terminal`, `bun:sqlite`, …) unless the official page says they cannot do the job.
+- Mark experimental APIs as experimental (HTTP/2 and HTTP/3 `fetch` clients, `Bun.serve({ http3 })`, `install.globalStore`, Android builds).
 
 ## Not official
 
-This is not an Oven / Anthropic project. Pages and URLs come from [bun.com/docs](https://bun.com/docs). If the live index adds a page the map misses, the skill tells the agent to fetch `https://bun.com/docs/llms.txt`.
+This is not an Oven / Anthropic project. Pages and URLs come from [bun.com/docs](https://bun.com/docs). If the live index adds a page the map misses, the skill tells the agent to fetch `https://bun.com/llms.txt`.
 
 ## License
 
