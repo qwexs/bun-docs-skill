@@ -25,9 +25,12 @@ Works with Grok, Claude Code, Codex, Cursor, and any agent that loads `SKILL.md`
    `https://bun.com/docs/<section>.md`, not `.../index.md`.
 3. Use [`bun.com/reference`](https://bun.com/reference) or local `@types/bun` for signatures.
 4. Use [`bun.com/blog/bun-vX.Y.Z`](https://bun.com/blog) for changelogs.
-   Current: [Bun 1.4](https://bun.com/blog/bun-v1.4.0).
+   Current: [Bun 1.4.2](https://bun.com/blog/bun-v1.4.2), with the main new
+   patch features in [Bun 1.4.1](https://bun.com/blog/bun-v1.4.1).
 
 Source catalog: [`references/sources.md`](references/sources.md).
+Known index mismatches and update checklist:
+[`references/maintenance.md`](references/maintenance.md).
 
 ## Structure
 
@@ -35,6 +38,7 @@ Source catalog: [`references/sources.md`](references/sources.md).
 bun-docs/
 ├── SKILL.md                 # protocol and precedence
 └── references/
+    ├── maintenance.md       # known broken links and refresh checklist
     ├── sources.md           # canonical vs third-party sources
     └── topics.md            # topic → official URL
 ```
@@ -45,7 +49,7 @@ bun-docs/
 - Official docs win over community snapshots.
 - In a Bun project use `bun`, not `node` / `npm` / `npx`.
 - Prefer Bun-native APIs (`Bun.serve`, `Bun.Image`, `Bun.WebView`, `Bun.markdown`, `Bun.cron`, `Bun.Terminal`, `bun:sqlite`, …) unless the official page says they cannot do the job.
-- Mark experimental APIs as experimental (HTTP/2 and HTTP/3 `fetch` clients, `Bun.serve({ http3 })`, `install.globalStore`, Android builds).
+- Mark experimental APIs as experimental (HTTP/2 and HTTP/3 `fetch` clients, `Bun.serve({ http2 })`, `Bun.serve({ http3 })`, `install.globalStore`, Android builds).
 
 ## Not official
 

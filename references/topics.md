@@ -16,7 +16,7 @@ https://bun.com/llms.txt
 | TypeScript 6 / 7 (`types: ["bun"]`) | https://bun.com/docs/typescript-6.md |
 | bun init | https://bun.com/docs/runtime/templating/init.md |
 | bun create | https://bun.com/docs/runtime/templating/create.md |
-| bunfig.toml | https://bun.com/docs/runtime/bunfig.md |
+| bunfig.toml / `install.offline` / `install.prefer` | https://bun.com/docs/runtime/bunfig.md |
 | Feedback | https://bun.com/docs/feedback.md |
 
 ## Runtime
@@ -34,7 +34,7 @@ https://bun.com/llms.txt
 | Auto-install | https://bun.com/docs/runtime/auto-install.md |
 | Plugins (runtime) | https://bun.com/docs/runtime/plugins.md |
 | File System Router | https://bun.com/docs/runtime/file-system-router.md |
-| Environment variables | https://bun.com/docs/runtime/environment-variables.md |
+| Environment variables / `--env-file` pipes, FIFOs, stdin | https://bun.com/docs/runtime/environment-variables.md |
 | Console | https://bun.com/docs/runtime/console.md |
 | Globals | https://bun.com/docs/runtime/globals.md |
 | Bun APIs overview | https://bun.com/docs/runtime/bun-apis.md |
@@ -47,7 +47,8 @@ https://bun.com/llms.txt
 | Topic | URL |
 |---|---|
 | `Bun.serve` | https://bun.com/docs/runtime/http/server.md |
-| HTTP/3 (`Bun.serve({ http3 })`) | https://bun.com/docs/runtime/http/server.md |
+| HTTP/2 (`Bun.serve({ http2 })`, experimental) | https://bun.com/docs/runtime/http/server.md |
+| HTTP/3 (`Bun.serve({ http3 })`, experimental) | https://bun.com/docs/runtime/http/server.md |
 | Routing | https://bun.com/docs/runtime/http/routing.md |
 | Static files (`{ dir }`) | https://bun.com/docs/runtime/http/routing.md |
 | Cookies (HTTP) | https://bun.com/docs/runtime/http/cookies.md |
@@ -55,7 +56,8 @@ https://bun.com/llms.txt
 | TLS | https://bun.com/docs/runtime/http/tls.md |
 | Error handling | https://bun.com/docs/runtime/http/error-handling.md |
 | Metrics | https://bun.com/docs/runtime/http/metrics.md |
-| WebSockets (server) | https://bun.com/docs/runtime/http/websockets.md |
+| WebSockets / client `pause()`, `resume()`, `isPaused` | https://bun.com/docs/runtime/http/websockets.md |
+| Server WebSocket `binaryType = "blob"` | https://bun.com/reference/bun/ServerWebSocket/binaryType |
 | `fetch` / HTTP/2 / HTTP/3 | https://bun.com/docs/runtime/networking/fetch.md |
 | TCP | https://bun.com/docs/runtime/networking/tcp.md |
 | UDP | https://bun.com/docs/runtime/networking/udp.md |
@@ -65,7 +67,7 @@ https://bun.com/llms.txt
 
 | Topic | URL |
 |---|---|
-| File I/O | https://bun.com/docs/runtime/file-io.md |
+| File I/O / streaming `Bun.write(path, Response)` | https://bun.com/docs/runtime/file-io.md |
 | Streams | https://bun.com/docs/runtime/streams.md |
 | Binary data | https://bun.com/docs/runtime/binary-data.md |
 | Archive (`Bun.Archive`) | https://bun.com/docs/runtime/archive.md |
@@ -79,6 +81,7 @@ https://bun.com/llms.txt
 | Workers | https://bun.com/docs/runtime/workers.md |
 | Image (`Bun.Image`) | https://bun.com/docs/runtime/image.md |
 | Hashing / passwords | https://bun.com/docs/runtime/hashing.md |
+| `node:crypto` Argon2 | https://bun.com/reference/node/crypto/argon2 |
 | Glob | https://bun.com/docs/runtime/glob.md |
 | Semver | https://bun.com/docs/runtime/semver.md |
 | Color | https://bun.com/docs/runtime/color.md |
@@ -101,14 +104,14 @@ https://bun.com/llms.txt
 | Secrets | https://bun.com/docs/runtime/secrets.md |
 | Transpiler | https://bun.com/docs/runtime/transpiler.md |
 | FFI | https://bun.com/docs/runtime/ffi.md |
-| C compiler | https://bun.com/docs/runtime/c-compiler.md |
+| C compiler / `--no-ffi-cc` | https://bun.com/docs/runtime/c-compiler.md |
 | Node-API | https://bun.com/docs/runtime/node-api.md |
 
 ## Package manager
 
 | Topic | URL |
 |---|---|
-| bun install | https://bun.com/docs/pm/cli/install.md |
+| bun install / `--offline` / `--prefer-offline` | https://bun.com/docs/pm/cli/install.md |
 | bun add | https://bun.com/docs/pm/cli/add.md |
 | bun add `--catalog` / `--filter` | https://bun.com/docs/pm/cli/add.md |
 | bun remove | https://bun.com/docs/pm/cli/remove.md |
@@ -127,7 +130,7 @@ https://bun.com/llms.txt
 | bun pm licenses | https://bun.com/docs/pm/cli/pm.md |
 | bun patch | https://bun.com/docs/pm/cli/patch.md |
 | bun --filter | https://bun.com/docs/pm/filter.md |
-| Workspaces | https://bun.com/docs/pm/workspaces.md |
+| Workspaces / `selfContained` / `hoistingLimits` | https://bun.com/docs/pm/workspaces.md |
 | Catalogs | https://bun.com/docs/pm/catalogs.md |
 | Isolated installs | https://bun.com/docs/pm/isolated-installs.md |
 | Global cache | https://bun.com/docs/pm/global-cache.md |
@@ -145,6 +148,9 @@ https://bun.com/llms.txt
 |---|---|
 | Bundler | https://bun.com/docs/bundler.md |
 | `--metafile-md` | https://bun.com/docs/bundler.md |
+| `--min-chunk-size` / `minChunkSize` | https://bun.com/docs/bundler.md |
+| Module preload / `--no-module-preload` / `modulePreload` | https://bun.com/docs/bundler.md |
+| Split `require()` / `--no-split-require` / `splitRequire` | https://bun.com/docs/bundler.md |
 | Fullstack dev server | https://bun.com/docs/bundler/fullstack.md |
 | Hot reloading | https://bun.com/docs/bundler/hot-reloading.md |
 | HTML & static sites | https://bun.com/docs/bundler/html-static.md |
@@ -154,7 +160,7 @@ https://bun.com/llms.txt
 | Single-file executable | https://bun.com/docs/bundler/executables.md |
 | Plugins (bundler) | https://bun.com/docs/bundler/plugins.md |
 | Macros | https://bun.com/docs/bundler/macros.md |
-| Bytecode | https://bun.com/docs/bundler/bytecode.md |
+| Bytecode / `--bytecode-depth` / `bytecodeDepth` | https://bun.com/docs/bundler/bytecode.md |
 | Minifier | https://bun.com/docs/bundler/minifier.md |
 | esbuild migrate | https://bun.com/docs/bundler/esbuild.md |
 
@@ -197,9 +203,12 @@ Generated from `packages/bun-types`. Search on https://bun.com/reference
 | `Bun.Image` | https://bun.com/reference/bun/Image |
 | `Bun.WebView` | https://bun.com/reference/bun/WebView |
 | `Bun.Terminal` | https://bun.com/reference/bun/Terminal |
+| `Bun.WebSocket.pause()` / `resume()` / `isPaused` | https://bun.com/reference/bun/WebSocket |
 | `Bun.cron` | https://bun.com/reference/bun/cron |
 | `Bun.markdown` | https://bun.com/reference/bun/markdown |
 | `Bun.Archive` | https://bun.com/reference/bun/Archive |
+| `Bun.BuildConfig.minChunkSize` | https://bun.com/reference/bun/BuildConfig/minChunkSize |
+| `Bun.BuildConfig.bytecodeDepth` | https://bun.com/reference/bun/BuildConfig/bytecodeDepth |
 | `Bun.JSON5` | https://bun.com/reference/bun/JSON5 |
 | `Bun.JSONC` | https://bun.com/reference/bun/JSONC |
 | `Bun.JSONL` | https://bun.com/reference/bun/JSONL |
@@ -212,6 +221,8 @@ Generated from `packages/bun-types`. Search on https://bun.com/reference
 | Globals | https://bun.com/reference/globals |
 
 Node modules: `https://bun.com/reference/node/<module>` (e.g. `fs`, `http`, `tls`, `quic`).
+Argon2: https://bun.com/reference/node/crypto/argon2 and
+https://bun.com/reference/node/crypto/argon2Sync.
 
 ## Guides
 
@@ -454,17 +465,42 @@ Index: https://bun.com/guides.md
 
 ## Changelog
 
-`https://bun.com/blog/bun-v<version>` — latest `1.4.0` (2026-08-20):
-https://bun.com/blog/bun-v1.4.0
+`https://bun.com/blog/bun-v<version>` — latest `1.4.2` (2026-09-05):
+https://bun.com/blog/bun-v1.4.2
 
-| Topic | URL |
-|---|---|
-| Upgrading / breaking changes | https://bun.com/blog/bun-v1.4.0#upgrading-to-1-4 |
-| `--cpu-prof` / `--heap-prof` | https://bun.com/blog/bun-v1.4.0#dev-tooling |
-| `process.on("memoryPressure")` | https://bun.com/blog/bun-v1.4.0#process-on-memorypressure |
-| HTTP/2 and HTTP/3 `fetch` (experimental) | https://bun.com/blog/bun-v1.4.0#http-2-http-3-in-fetch-experimental |
-| React Compiler | https://bun.com/blog/bun-v1.4.0#built-in-react-compiler |
-| Per-PR notes | https://bun.com/blog/release-notes/bun-v1.4.0 |
-| Rust rewrite | https://bun.com/blog/bun-in-rust |
-| Node.js test suite tracker | https://bun.com/node-test-suite |
-| Blog index | https://bun.com/blog |
+Fetch the `.md` twin when it exists. Bun 1.4.1 and 1.4.2 have one; fall back
+to the HTML post for releases such as 1.4.0 whose twin is missing. The 1.4.1
+and 1.4.2 posts have an upgrade command but no Upgrading/breaking section.
+
+| Release | Topic | URL |
+|---|---|---|
+| 1.4.2 | Release post (latest) | https://bun.com/blog/bun-v1.4.2 |
+| 1.4.2 | Upgrade command | https://bun.com/blog/bun-v1.4.2#to-upgrade-bun |
+| 1.4.2 | `bun build` variable-name regression | https://bun.com/blog/bun-v1.4.2#fixed-bun-build-variable-name-collision |
+| 1.4.2 | `AsyncLocalStorage` memory leak | https://bun.com/blog/bun-v1.4.2#fixed-asynclocalstorage-memory-leak |
+| 1.4.2 | `worker_threads` `online` event order | https://bun.com/blog/bun-v1.4.2#fixed-worker-threads-online-event-order |
+| 1.4.2 | `Bun.Image` CMYK/YCCK JPEG decoding | https://bun.com/blog/bun-v1.4.2#fixed-bun-image-decodes-cmyk-and-ycck-jpegs |
+| 1.4.1 | Release post | https://bun.com/blog/bun-v1.4.1 |
+| 1.4.1 | Upgrade command | https://bun.com/blog/bun-v1.4.1#to-upgrade-bun |
+| 1.4.1 | `Bun.serve` HTTP/2 (experimental) | https://bun.com/blog/bun-v1.4.1#bun-serve-supports-http-2 |
+| 1.4.1 | Streaming `Bun.write(path, Response)` | https://bun.com/blog/bun-v1.4.1#bun-write-path-response-streams-to-disk |
+| 1.4.1 | WebSocket `pause()` / `resume()` | https://bun.com/blog/bun-v1.4.1#websocket-supports-pause-and-resume |
+| 1.4.1 | `crypto.argon2` / `argon2Sync` | https://bun.com/blog/bun-v1.4.1#node-crypto-supports-crypto-argon2-and-crypto-argon2sync |
+| 1.4.1 | `--env-file` pipes, FIFOs, stdin | https://bun.com/blog/bun-v1.4.1#env-file-reads-pipes-fifos-and-dev-stdin |
+| 1.4.1 | `--no-ffi-cc` | https://bun.com/blog/bun-v1.4.1#no-ffi-cc-disables-cc-from-bun-ffi |
+| 1.4.1 | Self-contained workspace `node_modules` | https://bun.com/blog/bun-v1.4.1#self-contained-node-modules-for-workspace-packages |
+| 1.4.1 | `bun install --offline` | https://bun.com/blog/bun-v1.4.1#bun-install-offline |
+| 1.4.1 | `bun install --prefer-offline` | https://bun.com/blog/bun-v1.4.1#bun-install-prefer-offline |
+| 1.4.1 | `--min-chunk-size` / `minChunkSize` | https://bun.com/blog/bun-v1.4.1#min-chunk-size |
+| 1.4.1 | `--bytecode-depth` | https://bun.com/blog/bun-v1.4.1#smaller-bytecode |
+| 1.4.1 | Cross-compile with `--bytecode` | https://bun.com/blog/bun-v1.4.1#cross-compile-with-bytecode |
+| 1.4.1 | `fetch()` TLS hostname behavior change | https://bun.com/blog/bun-v1.4.1#fetch-verifies-tls-against-the-url-not-the-host-header |
+| 1.4.0 | Upgrading / breaking changes | https://bun.com/blog/bun-v1.4.0#upgrading-to-1-4 |
+| 1.4.0 | `--cpu-prof` / `--heap-prof` | https://bun.com/blog/bun-v1.4.0#dev-tooling |
+| 1.4.0 | `process.on("memoryPressure")` | https://bun.com/blog/bun-v1.4.0#process-on-memorypressure |
+| 1.4.0 | HTTP/2 and HTTP/3 `fetch` (experimental) | https://bun.com/blog/bun-v1.4.0#http-2-http-3-in-fetch-experimental |
+| 1.4.0 | React Compiler | https://bun.com/blog/bun-v1.4.0#built-in-react-compiler |
+| 1.4.0 | Per-PR notes | https://bun.com/blog/release-notes/bun-v1.4.0 |
+| — | Rust rewrite | https://bun.com/blog/bun-in-rust |
+| — | Node.js test suite tracker | https://bun.com/node-test-suite |
+| — | Blog index | https://bun.com/blog |

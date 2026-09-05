@@ -10,8 +10,10 @@ Live official sources first. Community snapshots last.
 | Docs page (markdown) | `https://bun.com/docs/<path>.md` | How-to, limits, examples. Always append `.md`. |
 | Welcome | https://bun.com/docs.md | Index of the docs site (`/docs/index.md` 404s). |
 | Type reference | https://bun.com/reference | Generated from `packages/bun-types`. Symbol: `/reference/bun/Image` |
-| Release blog | https://bun.com/blog | Changelog per version. Latest: https://bun.com/blog/bun-v1.4.0 |
-| Release notes | https://bun.com/blog/release-notes/bun-v1.4.0 | Per-PR notes that the 1.4 post links to |
+| Release blog | https://bun.com/blog | Changelog per version. Latest: https://bun.com/blog/bun-v1.4.2 |
+| Bun 1.4.2 | https://bun.com/blog/bun-v1.4.2.md | Latest patch; fixes 1.4.1 regressions and compatibility bugs |
+| Bun 1.4.1 | https://bun.com/blog/bun-v1.4.1.md | HTTP/2 server, offline install, bytecode/build and runtime additions |
+| Bun 1.4.0 release notes | https://bun.com/blog/release-notes/bun-v1.4.0 | Per-PR notes that the 1.4 post links to |
 | Rust rewrite | https://bun.com/blog/bun-in-rust | Why/how Bun moved from Zig to Rust |
 | Node.js test suite | https://bun.com/node-test-suite | Live pass/fail vs Node's own tests |
 | GitHub docs source | https://github.com/oven-sh/bun/tree/main/docs | `.mdx` sources if the site `.md` is stale or missing |
@@ -32,24 +34,27 @@ https://bun.com/docs/bundler.md
 https://bun.com/docs/test.md
 https://bun.com/guides.md
 https://bun.com/reference/bun/Image
-https://bun.com/blog/bun-v1.4.0
+https://bun.com/blog/bun-v1.4.2.md
+https://bun.com/blog/bun-v1.4.1.md
 ```
 
-Human URL without `.md` also works; prefer `.md` for agents.
+Human URL without `.md` also works; prefer `.md` for agents. Release-post
+markdown twins are not universal, so fall back to the HTML post on a 404.
 
 Section indexes are `https://bun.com/docs/<section>.md`, not `.../index.md`.
 `/docs/runtime/index.md`, `/docs/bundler/index.md`, `/docs/test/index.md`,
 and `/docs/index.md` 404. If a twin 404s, retry without `/index`, then
 `https://bun.com/llms.txt`.
 
-`llms.txt` can list stale twins. The topic map is the working URL.
+`llms.txt` can list stale twins. The topic map is the working URL. See
+`maintenance.md` for known mismatches and the next-release verification steps.
 
 ## Version
 
-- Runtime: `bun --version` (topic map last verified against 1.4.0, 2026-08-20)
+- Runtime: `bun --version` (topic map last verified against 1.4.2, 2026-09-05)
 - Releases: `gh release list --repo oven-sh/bun`
 - Tag: `bun-vX.Y.Z` → blog `https://bun.com/blog/bun-vX.Y.Z`
-- Breaking changes: that post's Upgrading section
+- Breaking changes: that post's Upgrading section, when present
 
 ## Official adjacent
 
