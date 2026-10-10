@@ -5,6 +5,9 @@ Section indexes: `https://bun.com/docs/<section>.md` (not `.../index.md`).
 Welcome: `https://bun.com/docs.md`. Live index if a page is missing:
 https://bun.com/llms.txt
 
+The map also includes verified release additions not yet listed in `llms.txt`;
+see `maintenance.md`. Check the runtime version before using new APIs or flags.
+
 ## Start
 
 | Topic | URL |
@@ -25,11 +28,15 @@ https://bun.com/llms.txt
 |---|---|
 | Runtime overview / `bun run` | https://bun.com/docs/runtime.md |
 | `bun run --parallel` / `--sequential` | https://bun.com/docs/runtime.md |
+| `bun check` / TypeScript 7 type checker / `--project` / `--build` | https://bun.com/docs/runtime/check.md |
+| `bun run --check` / `bun --check` | https://bun.com/docs/runtime/check.md |
+| `--disallow-code-generation-from-strings` / `=strict` | https://bun.com/docs/runtime/code-generation-from-strings.md |
 | Watch / `--hot` | https://bun.com/docs/runtime/watch-mode.md |
 | Debugger | https://bun.com/docs/runtime/debugger.md |
 | REPL | https://bun.com/docs/runtime/repl.md |
 | File types / loaders | https://bun.com/docs/runtime/file-types.md |
 | Module resolution | https://bun.com/docs/runtime/module-resolution.md |
+| `Bun.ModuleGraph` (experimental; not a security sandbox) | https://bun.com/docs/runtime/module-graph.md |
 | JSX | https://bun.com/docs/runtime/jsx.md |
 | Auto-install | https://bun.com/docs/runtime/auto-install.md |
 | Plugins (runtime) | https://bun.com/docs/runtime/plugins.md |
@@ -50,7 +57,7 @@ https://bun.com/llms.txt
 | HTTP/2 (`Bun.serve({ http2 })`, experimental) | https://bun.com/docs/runtime/http/server.md |
 | HTTP/3 (`Bun.serve({ http3 })`, experimental) | https://bun.com/docs/runtime/http/server.md |
 | Routing | https://bun.com/docs/runtime/http/routing.md |
-| Static files (`{ dir }`) | https://bun.com/docs/runtime/http/routing.md |
+| Static files (`{ dir }`) / Range / `If-Range` | https://bun.com/docs/runtime/http/routing.md |
 | Cookies (HTTP) | https://bun.com/docs/runtime/http/cookies.md |
 | Cookies (API) | https://bun.com/docs/runtime/cookies.md |
 | TLS | https://bun.com/docs/runtime/http/tls.md |
@@ -58,7 +65,10 @@ https://bun.com/llms.txt
 | Metrics | https://bun.com/docs/runtime/http/metrics.md |
 | WebSockets / client `pause()`, `resume()`, `isPaused` | https://bun.com/docs/runtime/http/websockets.md |
 | Server WebSocket `binaryType = "blob"` | https://bun.com/reference/bun/ServerWebSocket/binaryType |
-| `fetch` / HTTP/2 / HTTP/3 | https://bun.com/docs/runtime/networking/fetch.md |
+| `fetch` / HTTP/2 and HTTP/3 clients (experimental) | https://bun.com/docs/runtime/networking/fetch.md |
+| `Bun.FetchSession` / scoped TLS, proxy, keep-alive pools | https://bun.com/docs/runtime/networking/fetch.md |
+| Proxy / `ALL_PROXY` / `NO_PROXY` CIDR, IPv6, ports / `proxy: false` / `ERR_PROXY_TUNNEL` | https://bun.com/docs/runtime/networking/fetch.md |
+| `tls.checkServerIdentity` / `tls.serverName` / dial a verified address | https://bun.com/docs/runtime/networking/fetch.md |
 | TCP | https://bun.com/docs/runtime/networking/tcp.md |
 | UDP | https://bun.com/docs/runtime/networking/udp.md |
 | DNS | https://bun.com/docs/runtime/networking/dns.md |
@@ -68,12 +78,13 @@ https://bun.com/llms.txt
 | Topic | URL |
 |---|---|
 | File I/O / streaming `Bun.write(path, Response)` | https://bun.com/docs/runtime/file-io.md |
-| Streams | https://bun.com/docs/runtime/streams.md |
+| Streams / direct-stream backpressure / async-iterator cleanup | https://bun.com/docs/runtime/streams.md |
+| `CompressionStream` compression `level` | https://bun.com/blog/bun-v1.4.3#compressionstream-accepts-a-compression-level |
 | Binary data | https://bun.com/docs/runtime/binary-data.md |
 | Archive (`Bun.Archive`) | https://bun.com/docs/runtime/archive.md |
-| SQL (`Bun.sql`) | https://bun.com/docs/runtime/sql.md |
+| SQL (`Bun.sql`) / custom CA / `tls: Bun.file(...)` / `verify-full` | https://bun.com/docs/runtime/sql.md |
 | `bun:sqlite` | https://bun.com/docs/runtime/sqlite.md |
-| S3 | https://bun.com/docs/runtime/s3.md |
+| S3 / proxy environment | https://bun.com/docs/runtime/s3.md |
 | Redis | https://bun.com/docs/runtime/redis.md |
 | Shell (`Bun.$`) | https://bun.com/docs/runtime/shell.md |
 | Spawn | https://bun.com/docs/runtime/child-process.md |
@@ -101,7 +112,7 @@ https://bun.com/llms.txt
 | WebView | https://bun.com/docs/runtime/webview.md |
 | Cron | https://bun.com/docs/runtime/cron.md |
 | CSRF | https://bun.com/docs/runtime/csrf.md |
-| Secrets | https://bun.com/docs/runtime/secrets.md |
+| Secrets / Windows `persist: "local"` or `"enterprise"` | https://bun.com/docs/runtime/secrets.md |
 | Transpiler | https://bun.com/docs/runtime/transpiler.md |
 | FFI | https://bun.com/docs/runtime/ffi.md |
 | C compiler / `--no-ffi-cc` | https://bun.com/docs/runtime/c-compiler.md |
@@ -112,6 +123,7 @@ https://bun.com/llms.txt
 | Topic | URL |
 |---|---|
 | bun install / `--offline` / `--prefer-offline` | https://bun.com/docs/pm/cli/install.md |
+| Offline cache warming / platform filtering / `--production` / `--omit` | https://bun.com/docs/pm/cli/install.md |
 | bun add | https://bun.com/docs/pm/cli/add.md |
 | bun add `--catalog` / `--filter` | https://bun.com/docs/pm/cli/add.md |
 | bun remove | https://bun.com/docs/pm/cli/remove.md |
@@ -147,7 +159,9 @@ https://bun.com/llms.txt
 | Topic | URL |
 |---|---|
 | Bundler | https://bun.com/docs/bundler.md |
-| `--metafile-md` | https://bun.com/docs/bundler.md |
+| `bun build --check` / `Bun.build({ check: true })` | https://bun.com/docs/runtime/check.md |
+| `--metafile-md` / dynamic-import `entryPoint` in metafile inputs | https://bun.com/docs/bundler.md |
+| Output naming / `[hash]` collisions / `[hash9]`–`[hash13]` | https://bun.com/docs/bundler.md |
 | `--min-chunk-size` / `minChunkSize` | https://bun.com/docs/bundler.md |
 | Module preload / `--no-module-preload` / `modulePreload` | https://bun.com/docs/bundler.md |
 | Split `require()` / `--no-split-require` / `splitRequire` | https://bun.com/docs/bundler.md |
@@ -158,6 +172,9 @@ https://bun.com/llms.txt
 | CSS | https://bun.com/docs/bundler/css.md |
 | Loaders | https://bun.com/docs/bundler/loaders.md |
 | Single-file executable | https://bun.com/docs/bundler/executables.md |
+| Bytecode PGO / `--bytecode-order` / `BUN_BYTECODE_ORDER_OUT` / `compile.bytecodeOrder` | https://bun.com/docs/bundler/executables.md |
+| `--compile-jit-policy` / `compile.jitPolicy` / `Bun.unsafe.setJITPolicy` | https://bun.com/docs/bundler/executables.md |
+| `--no-optimize-bytecode` / `optimize.bytecode` | https://bun.com/docs/bundler/executables.md |
 | Plugins (bundler) | https://bun.com/docs/bundler/plugins.md |
 | Macros | https://bun.com/docs/bundler/macros.md |
 | Bytecode / `--bytecode-depth` / `bytecodeDepth` | https://bun.com/docs/bundler/bytecode.md |
@@ -169,6 +186,7 @@ https://bun.com/llms.txt
 | Topic | URL |
 |---|---|
 | bun test | https://bun.com/docs/test.md |
+| `bun test --check` | https://bun.com/docs/runtime/check.md |
 | Writing tests | https://bun.com/docs/test/writing-tests.md |
 | Configuration | https://bun.com/docs/test/configuration.md |
 | Runtime behavior | https://bun.com/docs/test/runtime-behavior.md |
@@ -179,7 +197,7 @@ https://bun.com/llms.txt
 | Snapshots | https://bun.com/docs/test/snapshots.md |
 | Dates and times | https://bun.com/docs/test/dates-times.md |
 | DOM testing | https://bun.com/docs/test/dom.md |
-| Coverage | https://bun.com/docs/test/code-coverage.md |
+| Coverage / `--coverage-reporter=lcov` | https://bun.com/docs/test/code-coverage.md |
 | Reporters | https://bun.com/docs/test/reporters.md |
 
 ## Project
@@ -200,6 +218,8 @@ Generated from `packages/bun-types`. Search on https://bun.com/reference
 | Symbol | URL |
 |---|---|
 | `Bun` | https://bun.com/reference/bun |
+| `Bun.FetchSession` | https://bun.com/reference/bun/FetchSession |
+| `Bun.ModuleGraph` (experimental) | https://bun.com/reference/bun/ModuleGraph |
 | `Bun.Image` | https://bun.com/reference/bun/Image |
 | `Bun.WebView` | https://bun.com/reference/bun/WebView |
 | `Bun.Terminal` | https://bun.com/reference/bun/Terminal |
@@ -207,6 +227,13 @@ Generated from `packages/bun-types`. Search on https://bun.com/reference
 | `Bun.cron` | https://bun.com/reference/bun/cron |
 | `Bun.markdown` | https://bun.com/reference/bun/markdown |
 | `Bun.Archive` | https://bun.com/reference/bun/Archive |
+| `Bun.BuildConfig.check` | https://bun.com/reference/bun/BuildConfig/check |
+| `Bun.BuildConfig.optimize` / bytecode optimization | https://bun.com/reference/bun/BuildConfig/optimize |
+| `Bun.CompileBuildOptions.bytecodeOrder` | https://bun.com/reference/bun/CompileBuildOptions/bytecodeOrder |
+| `Bun.CompileBuildOptions.jitPolicy` | https://bun.com/reference/bun/CompileBuildOptions/jitPolicy |
+| `Bun.unsafe.setJITPolicy` | https://bun.com/reference/bun/unsafe/setJITPolicy |
+| `bun:jsc` `bytecodeOrderStats()` | https://bun.com/reference/bun/jsc/bytecodeOrderStats |
+| `CompressionStream` | https://bun.com/reference/globals/CompressionStream |
 | `Bun.BuildConfig.minChunkSize` | https://bun.com/reference/bun/BuildConfig/minChunkSize |
 | `Bun.BuildConfig.bytecodeDepth` | https://bun.com/reference/bun/BuildConfig/bytecodeDepth |
 | `Bun.JSON5` | https://bun.com/reference/bun/JSON5 |
@@ -465,16 +492,43 @@ Index: https://bun.com/guides.md
 
 ## Changelog
 
-`https://bun.com/blog/bun-v<version>` — latest `1.4.2` (2026-09-05):
-https://bun.com/blog/bun-v1.4.2
+`https://bun.com/blog/bun-v<version>` — last verified `1.4.3` (2026-10-10):
+https://bun.com/blog/bun-v1.4.3
 
-Fetch the `.md` twin when it exists. Bun 1.4.1 and 1.4.2 have one; fall back
-to the HTML post for releases such as 1.4.0 whose twin is missing. The 1.4.1
-and 1.4.2 posts have an upgrade command but no Upgrading/breaking section.
+Confirm the latest version at https://bun.com/blog before answering "what's new".
+Fetch the `.md` twin when it exists. Bun 1.4.1, 1.4.2, and 1.4.3 have one;
+fall back to HTML for releases such as 1.4.0 whose twin is missing. These
+patch posts have an upgrade command but no dedicated Upgrading/breaking
+section. For 1.4.3, read proxy, string-to-code, security, and stream changes
+as well as the new features.
 
 | Release | Topic | URL |
 |---|---|---|
-| 1.4.2 | Release post (latest) | https://bun.com/blog/bun-v1.4.2 |
+| 1.4.3 | Release post (last verified) | https://bun.com/blog/bun-v1.4.3 |
+| 1.4.3 | Upgrade command | https://bun.com/blog/bun-v1.4.3#to-upgrade-bun |
+| 1.4.3 | `bun check` / TypeScript 7 checker | https://bun.com/blog/bun-v1.4.3#bun-check-a-typescript-type-checker-built-into-bun |
+| 1.4.3 | `bun run --check` | https://bun.com/blog/bun-v1.4.3#bun-run-check |
+| 1.4.3 | `bun test --check` | https://bun.com/blog/bun-v1.4.3#bun-test-check |
+| 1.4.3 | `bun build --check` / `check: true` | https://bun.com/blog/bun-v1.4.3#bun-build-check |
+| 1.4.3 | Idle CPU reductions | https://bun.com/blog/bun-v1.4.3#67-89-less-cpu-while-your-server-sleeps |
+| 1.4.3 | `Bun.FetchSession` | https://bun.com/blog/bun-v1.4.3#bun-fetchsession |
+| 1.4.3 | Proxy environment / CONNECT errors now reject | https://bun.com/blog/bun-v1.4.3#better-proxy-environment-support-in-fetch |
+| 1.4.3 | `Bun.ModuleGraph` (experimental) | https://bun.com/blog/bun-v1.4.3#experimental-bun-modulegraph |
+| 1.4.3 | `--disallow-code-generation-from-strings` / `=strict` | https://bun.com/blog/bun-v1.4.3#disallow-code-generation-from-strings-blocks-eval-and-new-function |
+| 1.4.3 | JavaScriptCore upgrade | https://bun.com/blog/bun-v1.4.3#javascriptcore-upgrade |
+| 1.4.3 | `CompressionStream` compression levels | https://bun.com/blog/bun-v1.4.3#compressionstream-accepts-a-compression-level |
+| 1.4.3 | `Bun.serve` `If-Range` | https://bun.com/blog/bun-v1.4.3#bun-serve-supports-if-range |
+| 1.4.3 | `bun install` skips unneeded tarballs | https://bun.com/blog/bun-v1.4.3#bun-install-skips-tarballs-it-won-t-install |
+| 1.4.3 | Lower build memory with many entry points | https://bun.com/blog/bun-v1.4.3#lower-memory-usage-in-bun-build-with-many-entry-points |
+| 1.4.3 | `[hash9]`–`[hash13]` output names | https://bun.com/blog/bun-v1.4.3#bun-build-supports-hashn-in-output-names |
+| 1.4.3 | Metafile dynamic-import `entryPoint` | https://bun.com/blog/bun-v1.4.3#metafile-names-the-input-file-behind-a-split-import |
+| 1.4.3 | Bytecode PGO / `--bytecode-order` | https://bun.com/blog/bun-v1.4.3#bun-build-compile-supports-profile-guided-bytecode-layout |
+| 1.4.3 | Faster bytecode startup / JIT policy / optimizer | https://bun.com/blog/bun-v1.4.3#faster-startup-for-compile-bytecode-executables |
+| 1.4.3 | Windows secrets `persist` / dependency upgrades | https://bun.com/blog/bun-v1.4.3#other-improvements |
+| 1.4.3 | TLS / HTTP/2 / archive security hardening | https://bun.com/blog/bun-v1.4.3#security |
+| 1.4.3 | Node.js compatibility fixes | https://bun.com/blog/bun-v1.4.3#node-js-compatibility-improvements |
+| 1.4.3 | Direct-stream backpressure / async-iterator cancellation | https://bun.com/blog/bun-v1.4.3#streams |
+| 1.4.2 | Release post | https://bun.com/blog/bun-v1.4.2 |
 | 1.4.2 | Upgrade command | https://bun.com/blog/bun-v1.4.2#to-upgrade-bun |
 | 1.4.2 | `bun build` variable-name regression | https://bun.com/blog/bun-v1.4.2#fixed-bun-build-variable-name-collision |
 | 1.4.2 | `AsyncLocalStorage` memory leak | https://bun.com/blog/bun-v1.4.2#fixed-asynclocalstorage-memory-leak |

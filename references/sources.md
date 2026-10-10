@@ -10,8 +10,9 @@ Live official sources first. Community snapshots last.
 | Docs page (markdown) | `https://bun.com/docs/<path>.md` | How-to, limits, examples. Always append `.md`. |
 | Welcome | https://bun.com/docs.md | Index of the docs site (`/docs/index.md` 404s). |
 | Type reference | https://bun.com/reference | Generated from `packages/bun-types`. Symbol: `/reference/bun/Image` |
-| Release blog | https://bun.com/blog | Changelog per version. Latest: https://bun.com/blog/bun-v1.4.2 |
-| Bun 1.4.2 | https://bun.com/blog/bun-v1.4.2.md | Latest patch; fixes 1.4.1 regressions and compatibility bugs |
+| Release blog | https://bun.com/blog | Confirm the latest version; last verified: https://bun.com/blog/bun-v1.4.3 |
+| Bun 1.4.3 | https://bun.com/blog/bun-v1.4.3.md | `bun check` / `--check`, FetchSession, experimental ModuleGraph, string-to-code restrictions, bytecode PGO, security and compatibility fixes |
+| Bun 1.4.2 | https://bun.com/blog/bun-v1.4.2.md | Fixes 1.4.1 regressions and compatibility bugs |
 | Bun 1.4.1 | https://bun.com/blog/bun-v1.4.1.md | HTTP/2 server, offline install, bytecode/build and runtime additions |
 | Bun 1.4.0 release notes | https://bun.com/blog/release-notes/bun-v1.4.0 | Per-PR notes that the 1.4 post links to |
 | Rust rewrite | https://bun.com/blog/bun-in-rust | Why/how Bun moved from Zig to Rust |
@@ -29,11 +30,15 @@ Full dump (avoid unless the index has no match): https://bun.com/llms-full.txt
 https://bun.com/docs.md
 https://bun.com/docs/runtime.md
 https://bun.com/docs/runtime/image.md
+https://bun.com/docs/runtime/check.md
+https://bun.com/docs/runtime/module-graph.md
+https://bun.com/docs/runtime/code-generation-from-strings.md
 https://bun.com/docs/pm/cli/install.md
 https://bun.com/docs/bundler.md
 https://bun.com/docs/test.md
 https://bun.com/guides.md
 https://bun.com/reference/bun/Image
+https://bun.com/blog/bun-v1.4.3.md
 https://bun.com/blog/bun-v1.4.2.md
 https://bun.com/blog/bun-v1.4.1.md
 ```
@@ -46,15 +51,20 @@ Section indexes are `https://bun.com/docs/<section>.md`, not `.../index.md`.
 and `/docs/index.md` 404. If a twin 404s, retry without `/index`, then
 `https://bun.com/llms.txt`.
 
-`llms.txt` can list stale twins. The topic map is the working URL. See
-`maintenance.md` for known mismatches and the next-release verification steps.
+`llms.txt` can list stale twins and omit newly published pages. The topic map
+includes verified release additions. See `maintenance.md` for known mismatches
+and the next-release verification steps.
 
 ## Version
 
-- Runtime: `bun --version` (topic map last verified against 1.4.2, 2026-09-05)
+- Runtime: `bun --version` (topic map last verified against 1.4.3, 2026-10-10)
 - Releases: `gh release list --repo oven-sh/bun`
 - Tag: `bun-vX.Y.Z` → blog `https://bun.com/blog/bun-vX.Y.Z`
-- Breaking changes: that post's Upgrading section, when present
+- Breaking changes: that post's Upgrading section, when present, plus feature
+  and security sections. Bun 1.4.3 changes proxy CONNECT errors and enforces
+  `--disallow-code-generation-from-strings` without a dedicated Upgrading section.
+- For older runtimes, check docs and type sources at the matching Git tag;
+  the live site and GitHub `main` may describe newer features.
 
 ## Official adjacent
 
